@@ -30,9 +30,9 @@ This project is a simple Vue.js application that retrieves information from an A
 
 1. Start the development server:
     ```sh
-    npm run serve
+    npm run dev
     ```
-2. Open your browser and navigate to `http://localhost:8080`.
+2. Open your browser and navigate to `http://localhost:5173`.
 
 ## Testing
 
