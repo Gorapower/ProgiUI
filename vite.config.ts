@@ -5,9 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -16,9 +14,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://nf1z2vtdlj.execute-api.us-west-2.amazonaws.com',
+        target: 'https://localhost:12295', // update port as neeed once API is running
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/Prod/api')
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, '/api')
       }
     }
   }
